@@ -1,0 +1,168 @@
+[33mcommit 6493495b58beed71f55f4531b71a23cb33f90294[m[33m ([m[1;36mHEAD -> [m[1;32msprit002[m[33m)[m
+Author: oWASDo <sem961@gmail.com>
+Date:   Tue May 8 17:17:11 2018 +0200
+
+    Implement enemy partoling
+
+[33mcommit 05b5894baa4938c2b1827d3570e15aa83fa687d5[m[33m ([m[1;32mmaster[m[33m)[m
+Merge: 951243d 86c69e9
+Author: Roberto De Ioris <roberto@aiv01.it>
+Date:   Mon May 7 11:14:07 2018 +0200
+
+    merged sprint001
+
+[33mcommit 86c69e9713a7e40cfc11fcf4651e364dc3dbe83d[m
+Author: Piera Falcone <pierafalcone01@gmail.com>
+Date:   Mon May 7 10:49:33 2018 +0200
+
+    Added animations and blend trees: walking, sprinting, shooting and throwing granades
+
+[33mcommit 8fc0f253938824fad9ac450720df03085a64c03e[m
+Author: Roberto De Ioris <roberto@aiv01.it>
+Date:   Mon May 7 10:30:36 2018 +0200
+
+    added dll for steam
+
+[33mcommit 19e2666e921d7ec9c4f727e9004d0688b1ef0a89[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Mon May 7 10:16:14 2018 +0200
+
+    fixed steam dll
+
+[33mcommit e7dc109a1c61ccfa404439a660f6d8ce3b0b52e7[m
+Author: Roberto De Ioris <roberto@aiv01.it>
+Date:   Mon May 7 09:49:46 2018 +0200
+
+    removed useless stuff
+
+[33mcommit 951243d2d0aab939503ee596e835d5e5b8fc11ce[m
+Author: Antonio Taccogni <antonio.taccogni@gmail.com>
+Date:   Sat May 5 18:39:52 2018 +0200
+
+    Added death and damage Animation
+
+[33mcommit b75d0e8b2b36d06ecd87e706372b5cf1965ecfa8[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Tue May 1 11:42:18 2018 +0200
+
+    Adapted lobby to latest version of GamePacket
+
+[33mcommit d4198b9ce0402cc0f966c57aa5e0055e1d67d50b[m
+Merge: b829a50 db69468
+Author: Alessio Annunziato <alex.aaav@hotmail.it>
+Date:   Tue May 1 11:22:07 2018 +0200
+
+    Merge pull request #1 from aiv01/VoiceChat
+    
+    Updated to local status.GP and Utils upd to latest
+
+[33mcommit db69468489657279363dc9e4c8c96189bb4c7676[m
+Author: Matteo Lorenzo Nasci <Matteo.Lorenzo.Nasci@hotmail.com>
+Date:   Mon Apr 30 20:23:37 2018 +0200
+
+    Updated to local status.GP and Utils upd to latest
+    
+    Voice chat system added. Client modified to adapt to GamePacket update
+
+[33mcommit b829a504ab4fd5eae3aaf5a7ab5cbd3ae9db5f5a[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Mon Apr 30 11:21:13 2018 +0200
+
+    Minor bugs fixed
+
+[33mcommit 5a0a84211ae3b1b1e79d00ef7f1ac5e5213a7ffa[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Tue Apr 24 22:40:28 2018 +0200
+
+    Clients can now send and receive transforms.
+
+[33mcommit 1099330c4ce4933c2cecc4ce4835013442452a07[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Tue Apr 24 20:01:33 2018 +0200
+
+    Host is now determined at the start of the game scene.
+
+[33mcommit 124f9689bb7d9c5fcb781e3518170193700e2893[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Tue Apr 24 12:16:01 2018 +0200
+
+    Selected avatars can now show the steam profile picture of the owner.
+
+[33mcommit 06498f16bcdb235eb66b2d91b0d8fed55c09a4dc[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Tue Apr 24 11:48:05 2018 +0200
+
+    Added button to start the game.
+
+[33mcommit 36f6191bcab5cc01348f188baf7ccb38c9738ac0[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Tue Apr 24 11:18:22 2018 +0200
+
+    Added the possibility to leave the lobby and to know when someone else leave the lobby. Added a manager for the selection of the avatars.
+
+[33mcommit 3e65694d2be5d2ebdb3037144d7bbd7fa813dba0[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Tue Apr 24 10:43:14 2018 +0200
+
+    Added the possibility to select an avatar.
+
+[33mcommit 30434e96df577bf42974527ae164523c1acd9d9f[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Tue Apr 24 10:05:14 2018 +0200
+
+    Added chat
+
+[33mcommit 38a6587e2f9e4ab380b7c5050272b61613b06340[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Tue Apr 24 09:36:01 2018 +0200
+
+    Added the possibility to accept an invite to join a lobby
+
+[33mcommit d8f9cf2968a6afdbc4bce880b1fa4525779e97fa[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Tue Apr 24 08:40:02 2018 +0200
+
+    Added the friend list and the possibility to invite a friend in the lobby
+
+[33mcommit f2fd5a2a93498cf67fcddc7881f3c62be6088674[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Tue Apr 24 07:41:45 2018 +0200
+
+    Added a steam callbacks receiver and the canvas for the selection of the avatars
+
+[33mcommit 93e77ef17a9291aa36b6e9bc4112a4174f9a673f[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Tue Apr 24 07:22:23 2018 +0200
+
+    Added the possibility to search for a lobby or to create a private lobby
+
+[33mcommit 6144780b6e6120900cbd85f8e3bade54a8988ece[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Mon Apr 23 18:25:50 2018 +0200
+
+    Added missing Steamworks.NET library, created Tests and TestScenes folders
+
+[33mcommit 55b570eff8e5873d7d17fd9e421d1e989bf937a0[m
+Merge: aa50fdd 9eb65ca
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Mon Apr 23 13:02:48 2018 +0200
+
+    Merge branch 'develop' into sprint001
+
+[33mcommit 9eb65ca959a9f969406fb0c35dd5f15a80a21105[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Mon Apr 23 13:02:17 2018 +0200
+
+    first meaningful commit
+
+[33mcommit aa50fddd78d6911bd4fa682579c1ffe1dcb38d55[m
+Author: aannun <alex.aaav@hotmail.it>
+Date:   Mon Apr 23 12:31:22 2018 +0200
+
+    Project Creation
+
+[33mcommit 84e3d69af90d6dbddd50daa97cf8d66648f416e2[m
+Author: Roberto De Ioris <roberto@20tab.com>
+Date:   Mon Apr 23 12:11:11 2018 +0200
+
+    Initial commit

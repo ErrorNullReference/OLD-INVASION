@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INVASION", "INVASION.csproj", "{88D546C7-397D-8674-9786-CA732C44487D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INVASION.Plugins", "INVASION.Plugins.csproj", "{15DE87F2-FC60-8164-F1A3-2ACBD724CD51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INVASION.Editor", "INVASION.Editor.csproj", "{6236BE70-D458-3B87-38B9-3094928526E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88D546C7-397D-8674-9786-CA732C44487D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88D546C7-397D-8674-9786-CA732C44487D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88D546C7-397D-8674-9786-CA732C44487D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88D546C7-397D-8674-9786-CA732C44487D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15DE87F2-FC60-8164-F1A3-2ACBD724CD51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15DE87F2-FC60-8164-F1A3-2ACBD724CD51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15DE87F2-FC60-8164-F1A3-2ACBD724CD51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15DE87F2-FC60-8164-F1A3-2ACBD724CD51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6236BE70-D458-3B87-38B9-3094928526E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6236BE70-D458-3B87-38B9-3094928526E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6236BE70-D458-3B87-38B9-3094928526E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6236BE70-D458-3B87-38B9-3094928526E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
