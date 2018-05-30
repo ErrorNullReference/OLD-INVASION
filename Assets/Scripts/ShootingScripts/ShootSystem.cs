@@ -99,7 +99,7 @@ public class ShootSystem : MonoBehaviour
 
         Client.SendPacketToHost(data, PacketType.ShootHitServer, Steamworks.EP2PSend.k_EP2PSendReliable);
 
-        Debug.Log("hit");
+        //Debug.Log("hit");
     }
 
     void Update()

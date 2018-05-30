@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -8947,8 +8947,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1735348482}
-  m_LocalRotation: {x: -0.38409343, y: 0.23020774, z: -0.09950838, w: -0.8885802}
-  m_LocalPosition: {x: 5.991921, y: 15.607117, z: -11.323923}
+  m_LocalRotation: {x: 0.42191043, y: -0.2313671, z: 0.11228089, w: 0.8693986}
+  m_LocalPosition: {x: 73.68663, y: 8.955002, z: 96.333405}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8965,7 +8965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52889a9de104ab94a821fae5dce179c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Offset: {x: 5.991921, y: 14.60712, z: -11.32392}
+  Offset: {x: 2.68663, y: 7.975002, z: -5.266594}
 --- !u!114 &1735348488
 MonoBehaviour:
   m_ObjectHideFlags: 0

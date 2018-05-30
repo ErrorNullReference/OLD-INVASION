@@ -20,7 +20,7 @@ public class EnemyHitMgr : MonoBehaviour
         int id = data[0];
 
         Enemy e = ClientTransformManager.IdEnemies[id].gameObject.GetComponent<Enemy>();
-        Debug.Log("hit received");
+        //Debug.Log("hit received");
         e.DecreaseLife();
         if (CheckLife(e))
             Client.SendPacketToInGameUsers(data, PacketType.ShootHit, EP2PSend.k_EP2PSendReliable, false);

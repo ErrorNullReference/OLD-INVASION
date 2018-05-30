@@ -51,8 +51,8 @@ public class ShootsMgr : MonoBehaviour
 
             if (Physics.Raycast(rays[i].Ray, out raycastHit, distance))
             {
-                if (Application.isEditor)
-                    Debug.Log(raycastHit.collider);
+                //if (Application.isEditor)
+                //  Debug.Log(raycastHit.collider);
                 
                 if (rays[i].ActivateCallbacks)
                 {
