@@ -26,10 +26,13 @@ public class PlayerController : MonoBehaviour
 
     void MoveBody()
     {
-        float x = Input.GetAxis("Horizontal") * Speed;
-        float z = Input.GetAxis("Vertical") * Speed;
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
 
-        Vector3 dir = new Vector3(x, 0, z);
+        Vector3 frontDir = new Vector3(this.Camera.transform.forward.x * z, 0, this.Camera.transform.forward.z * z);
+        Vector3 sideDir = new Vector3(this.Camera.transform.right.x * x, 0, this.Camera.transform.right.z * x);
+
+        Vector3 dir = (frontDir + sideDir).normalized * Speed;
 
         if (dir.sqrMagnitude != 0)
             body.Move(dir, Time.deltaTime);
