@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SerializeMe: 0
   ClientID: 3
-  Health: 100
-  MaxHealth: 100
+  Health: 5
+  MaxHealth: 5
   LevelXP: 0
   GunName: rifle
   AmmoHeld: 100
