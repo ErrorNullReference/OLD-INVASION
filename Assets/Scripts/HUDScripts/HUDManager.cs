@@ -28,6 +28,7 @@ public class HUDManager : MonoBehaviour
     }
     ;
 
+    private Enemy enemy;
     public DisplayDataType dataType;
     public HeadsUpDisplay InputAssetHUD;
     public bool OneTimeUpdate;  //Set to true to disable component.
@@ -38,6 +39,7 @@ public class HUDManager : MonoBehaviour
         {
             OneTimeUpdate = !OneTimeUpdate;
         }
+        enemy=GetComponentInParent<Enemy>();
 
     }
 
@@ -73,15 +75,15 @@ public class HUDManager : MonoBehaviour
 
             case DisplayDataType.Health:
                 if (GOSlider != null)       //HUD 2D text subcase
-                    GOSlider.value = InputAssetHUD.Health / InputAssetHUD.MaxHealth;
+                    GOSlider.value = enemy.Life / InputAssetHUD.MaxHealth;
                 else if (GOImg != null)
                 {   // sprite subcase
-                    GOImg.color = InputAssetHUD.PlayerHealthBarGradient.Evaluate(InputAssetHUD.Health / InputAssetHUD.MaxHealth);
-                    GOImg.fillAmount = (InputAssetHUD.Health / InputAssetHUD.MaxHealth);
+                    GOImg.color = InputAssetHUD.PlayerHealthBarGradient.Evaluate(enemy.Life / InputAssetHUD.MaxHealth);
+                    GOImg.fillAmount = (enemy.Life / InputAssetHUD.MaxHealth);
                 }
                 else
                 {   //Quad subcase 
-                    gameObject.GetComponent<MeshRenderer>().material.color = InputAssetHUD.PlayerHealthBarGradient.Evaluate(InputAssetHUD.Health / InputAssetHUD.MaxHealth);
+                    gameObject.GetComponent<MeshRenderer>().material.color = InputAssetHUD.PlayerHealthBarGradient.Evaluate(enemy.Life / InputAssetHUD.MaxHealth);
                 }
 
                 break;

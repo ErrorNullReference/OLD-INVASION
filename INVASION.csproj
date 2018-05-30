@@ -254,6 +254,7 @@
     <Compile Include="Assets\Scripts\ControllersScript\FixedCameraLerp.cs" />
     <Compile Include="Assets\Scripts\ControllersScript\PlayerControllerTwo.cs" />
     <Compile Include="Assets\Scripts\ControllersScript\PlayerMovements.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawnScripts\ClientEnemyStatsMgr.cs" />
     <Compile Include="Assets\Scripts\EnemySpawnScripts\ClientTransformManager.cs" />
     <Compile Include="Assets\Scripts\EnemySpawnScripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemySpawnScripts\EnemyHitMgr.cs" />
