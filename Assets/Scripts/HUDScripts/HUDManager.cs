@@ -8,7 +8,7 @@ using System.IO;
 
 public class HUDManager : MonoBehaviour
 {
-	//Scripts that can be attached on multiple components for HUD, will display one of the chosen data.
+    //Scripts that can be attached on multiple components for HUD, will display one of the chosen data.
 
     public enum DisplayDataType
     {
@@ -24,14 +24,14 @@ public class HUDManager : MonoBehaviour
         MissionName,
         ObjectiveDescription,
         PlayerImg,
-        PlayerName
-    }
+        PlayerName}
     ;
 
     private Enemy enemy;
     public DisplayDataType dataType;
     public HeadsUpDisplay InputAssetHUD;
-    public bool OneTimeUpdate;  //Set to true to disable component.
+    public bool OneTimeUpdate;
+    //Set to true to disable component.
 
     void Awake()
     {
@@ -39,7 +39,7 @@ public class HUDManager : MonoBehaviour
         {
             OneTimeUpdate = !OneTimeUpdate;
         }
-        enemy=GetComponentInParent<Enemy>();
+        enemy = GetComponentInParent<Enemy>();
 
     }
 
@@ -118,7 +118,7 @@ public class HUDManager : MonoBehaviour
                 GOText.text = InputAssetHUD.AmmoMag.ToString();
                 break;
 
-            /*		case DisplayDataType.LevelName:
+        /*		case DisplayDataType.LevelName:
                         GOText.text = InputAssetHUD.LevelName;
                         OneTimeUpdate = true;
                         break;
@@ -133,7 +133,7 @@ public class HUDManager : MonoBehaviour
                         break;
                         */
             case DisplayDataType.PlayerName:
-                if (Server.Users.Count <=0)
+                if (Server.Users.Count <= 0)
                 {
                     GOText.text = "Player Name";
                 }
