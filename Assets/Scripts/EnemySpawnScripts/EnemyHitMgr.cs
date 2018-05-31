@@ -19,21 +19,24 @@ public class EnemyHitMgr : MonoBehaviour
     {
         int id = data[0];
 
-                Enemy e = ClientTransformManager.IdEnemies[id].gameObject.GetComponent<Enemy>();
-                Debug.Log("hit received");
-                e.DecreaseLife();
-                CheckLife(e);
-            //send to all but this client a packet with hit command only if e life is not 0 
-            //else send enemy death;
+        Enemy e = ClientTransformManager.IdEnemies[id].gameObject.GetComponent<Enemy>();
+        //Debug.Log("hit received");
+        e.DecreaseLife();
+        if (CheckLife(e))
+            Client.SendPacketToInGameUsers(data, PacketType.ShootHit, EP2PSend.k_EP2PSendReliable, false);
+        //send to all but this client a packet with hit command only if e life is not 0 
+        //else send enemy death;
     }
 
-    private void CheckLife(Enemy e)
+    private bool CheckLife(Enemy e)
     {
         //will then send status info to players and they'll update their enemies lives
         if (e.Life <= 0)
         {
             e.DestroyAndRecycle();
             HostEnemyDestroyer.EnemyToRecycleToAdd.Add(e);
+            return false;
         }
+        return true;
     }
 }

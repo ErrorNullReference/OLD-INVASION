@@ -34,7 +34,7 @@ public class HostEnemySpawner : MonoBehaviour
         waitForFrame = new WaitForEndOfFrame();
         enemiesCount = 0;
         enemyId = 0;
-        firstWaveCount = UnityEngine.Random.Range(1, 2);    
+        firstWaveCount = UnityEngine.Random.Range(1, 20);    
 
         SteamCallbackReceiver.ChatUpdateEvent += InitCoroutine;
         SteamCallbackReceiver.LobbyDataUpdateEvent += InitCoroutine;

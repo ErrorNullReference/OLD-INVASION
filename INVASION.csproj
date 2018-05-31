@@ -326,6 +326,7 @@
     <Compile Include="Assets\Scripts\ControllersScript\FixedCameraLerp.cs" />
     <Compile Include="Assets\Scripts\ControllersScript\PlayerControllerTwo.cs" />
     <Compile Include="Assets\Scripts\ControllersScript\PlayerMovements.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawnScripts\ClientEnemyStatsMgr.cs" />
     <Compile Include="Assets\Scripts\EnemySpawnScripts\ClientTransformManager.cs" />
     <Compile Include="Assets\Scripts\EnemySpawnScripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemySpawnScripts\EnemyHitMgr.cs" />
@@ -335,14 +336,12 @@
     <Compile Include="Assets\Scripts\EnemySpawnScripts\HostEnemySpawner.cs" />
     <Compile Include="Assets\Scripts\EnemySpawnScripts\Pool.cs" />
     <Compile Include="Assets\Scripts\HostServerScripts\FollowPlayer.cs" />
-    <Compile Include="Assets\Scripts\HostServerScripts\GameChat.cs" />
     <Compile Include="Assets\Scripts\HostServerScripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\HostServerScripts\PlayersMgr.cs" />
     <Compile Include="Assets\Scripts\HostServerScripts\Prediction.cs" />
     <Compile Include="Assets\Scripts\HostServerScripts\SendTransformUpdate.cs" />
     <Compile Include="Assets\Scripts\HostServerScripts\Server.cs" />
     <Compile Include="Assets\Scripts\HostServerScripts\SimpleAvatar.cs" />
-    <Compile Include="Assets\Scripts\HostServerScripts\SimpleController.cs" />
     <Compile Include="Assets\Scripts\HUDScripts\EnemyHUDBar.cs" />
     <Compile Include="Assets\Scripts\HUDScripts\HeadsUpDisplay.cs" />
     <Compile Include="Assets\Scripts\HUDScripts\HUDManager.cs" />
@@ -382,6 +381,7 @@
     <Compile Include="Assets\Scripts\PatrolAndChaseScripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\PatrolAndChaseScripts\playAnimation.cs" />
     <Compile Include="Assets\Scripts\PatrolAndChaseScripts\ViewControl.cs" />
+    <Compile Include="Assets\Scripts\PlayerControl\PlayerAnimatorController.cs" />
     <Compile Include="Assets\Scripts\ShootingScripts\Gun.cs" />
     <Compile Include="Assets\Scripts\ShootingScripts\GunScriptable.cs" />
     <Compile Include="Assets\Scripts\ShootingScripts\Muzzle.cs" />
