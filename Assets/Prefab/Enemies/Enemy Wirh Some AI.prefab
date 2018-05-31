@@ -3037,6 +3037,7 @@ MonoBehaviour:
   Recycling: 0
   randomSpawnTimer: 0
   networkId: 0
+  Life: 0
   position: {x: 0, y: 0, z: 0}
 --- !u!136 &136067789119106868
 CapsuleCollider:

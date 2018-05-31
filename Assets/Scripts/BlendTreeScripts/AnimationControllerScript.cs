@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AnimationControllerScript : MonoBehaviour
 {
-
     private Animator anim;
 
     public float SpeedForward
@@ -15,7 +14,6 @@ public class AnimationControllerScript : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-
 
     public void Animation(float forward, float right)
     {
