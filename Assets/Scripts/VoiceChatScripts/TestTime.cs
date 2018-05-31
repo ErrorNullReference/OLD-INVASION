@@ -3,13 +3,9 @@ using System.Diagnostics;
 using System.IO;
 using System;
 using System.Text;
-<<<<<<< HEAD
-=======
-
 //using VOCASY;//
 //using VOCASY.Utility;
 
->>>>>>> 69dcbd6b9c4d9a9a09525577293ef84900e3cd91
 public class TestTime : MonoBehaviour
 {
     Stopwatch watch = new Stopwatch();
