@@ -381,6 +381,7 @@
     <Compile Include="Assets\Scripts\PatrolAndChaseScripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\PatrolAndChaseScripts\playAnimation.cs" />
     <Compile Include="Assets\Scripts\PatrolAndChaseScripts\ViewControl.cs" />
+    <Compile Include="Assets\Scripts\PlayerControl\PlayerAnimatorController.cs" />
     <Compile Include="Assets\Scripts\ShootingScripts\Gun.cs" />
     <Compile Include="Assets\Scripts\ShootingScripts\GunScriptable.cs" />
     <Compile Include="Assets\Scripts\ShootingScripts\Muzzle.cs" />

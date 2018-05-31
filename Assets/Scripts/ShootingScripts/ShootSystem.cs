@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+public enum ShootingType
+{
+    Single,
+    Consecutive,
+}
+
+
 public class ShootSystem : MonoBehaviour
 {
     /*
@@ -15,25 +22,17 @@ public class ShootSystem : MonoBehaviour
     /// </summary>
     //0: shoot in one frame - 1: shoot in some time
     [Tooltip("0: shoot in one frame - 1: shoot in some time")]
-    [Range(0, 1)]
-    public int Selector;
-
+    public ShootingType shootingType;
+    private float recoilTime;
     public Gun gun;
     public Muzzle muzzle;
-
-    //time for rateo
-    float time;
-
     private RaycastHit raycastHit;
-
     private LayerMask mask;
 
     private void Awake()
     {
-        time = 0;
-
+        recoilTime = 0;
         raycastHit = new RaycastHit();
-
         mask = LayerMask.NameToLayer("Player");
     }
 
@@ -62,7 +61,7 @@ public class ShootSystem : MonoBehaviour
         Ray ray = new Ray(muzzle.transform.position, muzzle.transform.forward);
 
         //method for start shooting
-        float distance = Selector == 0 ? gun.values.MaxDistance : gun.values.Speed * Time.deltaTime;
+        float distance = shootingType == ShootingType.Single ? gun.values.MaxDistance : gun.values.Speed * Time.deltaTime;
 
         //if (Application.isEditor)
         //  Debug.DrawRay(ray.origin, ray.direction * distance, Color.red, 0.5f);
@@ -78,7 +77,7 @@ public class ShootSystem : MonoBehaviour
                     SendHitToHost(obj.NetworkId);
             }
         }
-        else if (Selector != 0) // else add the ray in a list
+        else if (shootingType == ShootingType.Consecutive) // else add the ray in a list
         {
             ShootsMgr.AddRay(new RayPlus(ray.origin + ray.direction * distance, ray.direction, distance, gun.values.Damage, gun.values.Speed, gun.values.MaxDistance, activateCallbacks));
         }
@@ -105,24 +104,23 @@ public class ShootSystem : MonoBehaviour
     void Update()
     {
         //different beheaviour with number
-        time -= Time.deltaTime;
-        bool CanShoot = time <= 0;
+        recoilTime -= Time.deltaTime;
         switch (gun.values.GunSystem)
         {
         //single shoot
             case 0:
-                if (Input.GetButtonDown("Fire1") && CanShoot)
+                if (Input.GetButtonDown("Fire1") && recoilTime <= 0)
                 {
                     CallShoot();
-                    time = gun.values.Rateo;
+                    recoilTime = gun.values.Rateo;
                 }
                 break;
         //multi shoot
             case 1:
-                if (Input.GetButton("Fire1") && CanShoot)
+                if (Input.GetButton("Fire1") && recoilTime <= 0)
                 {
                     CallShoot();
-                    time = gun.values.Rateo;
+                    recoilTime = gun.values.Rateo;
                 }
                 break;
             default:
@@ -136,8 +134,8 @@ public class ShootSystem : MonoBehaviour
     /// if you want change gun
     /// use this for set time to 0
     /// </summary>
-    public void SetTimeTo0()
-    {
-        time = 0;
-    }
+//    public void SetTimeTo0()
+//    {
+//        recoilTime = 0;
+//    }
 }

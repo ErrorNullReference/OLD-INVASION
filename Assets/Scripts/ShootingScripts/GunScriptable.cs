@@ -13,12 +13,12 @@ public class GunScriptable : ScriptableObject
     public float AmmoReady { get { return ammoReady; } }
     //ammo in each magazine
     [SerializeField]
-    private float ammoInMagazine;
-    public float AmmoInMagazine { get { return ammoInMagazine; } }
+    private float currentAmmoInMags;
+    public float CurrentAmmoInMags { get { return currentAmmoInMags; } }
     //max ammo that can be stored
     [SerializeField]
-    private float maxAmmoStored;
-    public float MaxAmmoStored { get { return maxAmmoStored; } }
+    private float maxAmmoInMags;
+    public float MaxAmmoInMags { get { return maxAmmoInMags; } }
 
     //range
     //muzzle error

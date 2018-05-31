@@ -1504,7 +1504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2aec9008d5db564daa34aebf9642616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameras: []
 --- !u!114 &114449891573596564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1557,7 +1556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 645e2bcb3ff8f3d43ae5cf385d4ce797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Selector: 1
+  shootingType: 1
   gun: {fileID: 114710661134437690}
   muzzle: {fileID: 114856556257454942}
 --- !u!114 &114662686473737182
