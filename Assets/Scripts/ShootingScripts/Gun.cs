@@ -15,9 +15,9 @@ public class Gun : MonoBehaviour
 
     public void Awake()
     {
-        AmmoReady = values.AmmoReady;
-        AmmoInMagazine = values.CurrentAmmoInMags;
-        MaxAmmoStored = values.MaxAmmoInMags;
+        AmmoReady = values.CurrentAmmoInMag;
+        AmmoInMagazine = values.MagCapacity;
+        MaxAmmoStored = values.ComplessiveAmmoInMags;
     }
 
     public void Shoot()

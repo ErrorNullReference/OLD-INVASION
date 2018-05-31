@@ -7,18 +7,21 @@ public class GunScriptable : ScriptableObject
     //ammo
     //time to shoot
     public float Rateo;
-    //ammo that can be shoot
+    /// <summary>Number of ammo that the gun has left in the current magazine.
+    /// </summary>
     [SerializeField]
-    private float ammoReady;
-    public float AmmoReady { get { return ammoReady; } }
-    //ammo in each magazine
+    private float currentAmmoInMag;
+    public float CurrentAmmoInMag { get { return currentAmmoInMag; } }
+    /// <summary>The number of ammo that a Magazine can store.
+    /// </summary>
     [SerializeField]
-    private float currentAmmoInMags;
-    public float CurrentAmmoInMags { get { return currentAmmoInMags; } }
-    //max ammo that can be stored
+    private float magCapacity;
+    public float MagCapacity { get { return magCapacity; } }
+    /// <summary>All the ammo currently avaible to the gun.
+    /// </summary>
     [SerializeField]
-    private float maxAmmoInMags;
-    public float MaxAmmoInMags { get { return maxAmmoInMags; } }
+    private float complessiveAmmoInMags;
+    public float ComplessiveAmmoInMags { get { return complessiveAmmoInMags; } }
 
     //range
     //muzzle error
