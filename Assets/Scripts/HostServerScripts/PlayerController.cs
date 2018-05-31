@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CustomRigidBody))]
 public class PlayerController : MonoBehaviour
 {
-    public float Speed;
+    public float Speed, RunSpeed;
     public Camera Camera;
     CustomRigidBody body;
     RaycastHit hitInfo;
@@ -26,13 +26,15 @@ public class PlayerController : MonoBehaviour
 
     void MoveBody()
     {
-        float x = Input.GetAxis("Horizontal") * Speed;
-        float z = Input.GetAxis("Vertical") * Speed;
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
 
-        Vector3 dir = new Vector3(x, 0, z);
+        Vector3 dir = Camera.transform.forward * z + Camera.transform.right * x;
+        dir.y = 0;
+        dir = dir.normalized;
 
         if (dir.sqrMagnitude != 0)
-            body.Move(dir, Time.deltaTime);
+            body.Move(dir, (Input.GetButton("Sprint") ? RunSpeed : Speed), Time.deltaTime, true);
     }
 
     void SetDirection()

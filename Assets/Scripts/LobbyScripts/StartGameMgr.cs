@@ -27,7 +27,7 @@ public class StartGameMgr : MonoBehaviour
     void UpdateStartState(LobbyDataUpdate_t cb)
     {
         readyUsers.Clear();
-        if (Client.Users.Count == 0)
+        if (Client.Users == null || Client.Users.Count == 0)
             return;
 
         for (int i = 0; i < Client.Users.Count; i++)

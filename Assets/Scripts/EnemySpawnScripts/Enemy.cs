@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public HeadsUpDisplay Stats;
     public bool Destroy;
     public bool Recycling;
     public float randomSpawnTimer;
@@ -18,8 +19,13 @@ public class Enemy : MonoBehaviour
         }
         
     }
-//network id of object, needed to get object from list and update its transform
-    public int Life;
+
+    private void Start()
+    {
+        GetComponentInChildren<HUDManager>().InputAssetHUD = Stats;
+    }
+    //network id of object, needed to get object from list and update its transform
+    public float Life;
     public Vector3 position;
 //variable to save position for pathfinding. it does not affect gameobject position!
 
@@ -28,7 +34,8 @@ public class Enemy : MonoBehaviour
         networkId = GetComponent<GameNetworkObject>().NetworkId;
         //Debug.Log("Spawn: " + networkId);
         randomSpawnTimer = Random.Range(0f, 5.0f);
-        Life = UnityEngine.Random.Range(1, 6);
+        Stats.MaxHealth = 5;
+        Life = Stats.MaxHealth;
         Destroy = false;
         Recycling = false;
     }
@@ -41,8 +48,8 @@ public class Enemy : MonoBehaviour
     }
 
     public void Reset()
-    {        
-        Life = UnityEngine.Random.Range(1, 6);
+    {
+        Life = Stats.MaxHealth;
     }
 
     //this will be managed by the host to send enemies datas to players
@@ -55,7 +62,7 @@ public class Enemy : MonoBehaviour
     //TO DELETE
     public void DecreaseLife()
     {
-        this.Life--;
+        Life--;
     }
 
    

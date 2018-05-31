@@ -46,7 +46,7 @@ public class MovementManager : MonoBehaviour
     private void OnEnable()
     {
         this.agent.enabled = true;
-        this.agent.isStopped = true;
+        //this.agent.isStopped = true;
         if (Client.IsHost)
             StartCoroutine(SendTransform());
 

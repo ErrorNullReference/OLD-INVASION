@@ -14,13 +14,32 @@ public class User
 
     Callback<PersonaStateChange_t> callPersona;
     Callback<AvatarImageLoaded_t> callAvatar;
+    Callback<PersonaStateChange_t> personaState;
 
     public User(CSteamID id)
     {
+        AvatarID = -1;
         SteamID = id;
         SteamUsername = SteamFriends.GetFriendPersonaName(id);
-        AvatarID = -1;
-        DownloadAvatar();
+        if (SteamUsername == "" || SteamUsername == "[unknown]")
+            LoadName();
+        else
+            DownloadAvatar();
+    }
+
+    void LoadName()
+    {
+        personaState = Callback<PersonaStateChange_t>.Create((cb) =>
+            {
+                if (SteamID == (CSteamID)cb.m_ulSteamID)
+                {
+                    SteamUsername = SteamFriends.GetFriendPersonaName(SteamID);
+                    if (SteamUsername == "" || SteamUsername == "[unknown]")
+                        LoadName();
+                    else
+                        DownloadAvatar();
+                }
+            });
     }
 
     void DownloadAvatar()

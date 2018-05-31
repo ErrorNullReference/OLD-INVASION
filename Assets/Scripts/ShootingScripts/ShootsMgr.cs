@@ -46,13 +46,13 @@ public class ShootsMgr : MonoBehaviour
             distance = rays[i].Distance + distance > rays[i].MaxDistance ? rays[i].MaxDistance - rays[i].Distance : distance;
             rays[i].Distance += distance;
 
-            if (Application.isEditor)
-                Debug.DrawRay(rays[i].Ray.origin, rays[i].Ray.direction * distance, Color.red, 0.5f);
+            //if (Application.isEditor)
+            //  Debug.DrawRay(rays[i].Ray.origin, rays[i].Ray.direction * distance, Color.red, 0.5f);
 
             if (Physics.Raycast(rays[i].Ray, out raycastHit, distance))
             {
-                if (Application.isEditor)
-                    Debug.Log(raycastHit.collider);
+                //if (Application.isEditor)
+                //  Debug.Log(raycastHit.collider);
                 
                 if (rays[i].ActivateCallbacks)
                 {

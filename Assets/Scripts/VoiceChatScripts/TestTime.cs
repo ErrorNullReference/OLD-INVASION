@@ -3,6 +3,13 @@ using System.Diagnostics;
 using System.IO;
 using System;
 using System.Text;
+<<<<<<< HEAD
+=======
+
+//using VOCASY;//
+//using VOCASY.Utility;
+
+>>>>>>> 69dcbd6b9c4d9a9a09525577293ef84900e3cd91
 public class TestTime : MonoBehaviour
 {
     Stopwatch watch = new Stopwatch();
@@ -16,6 +23,7 @@ public class TestTime : MonoBehaviour
     uint c2;
 
     uint cycles = 1000000;
+
     void Update()
     {
         int n = 200000;
@@ -69,31 +77,37 @@ public class TestTime : MonoBehaviour
         first.DisposePacket();
         second.DisposePacket();
     }
+
     private class GamePacketStream
     {
         private BinaryReader reader;
         private BinaryWriter writer;
         private MemoryStream stream;
+
         public GamePacketStream(byte[] data, int length)
         {
             stream = new MemoryStream(data, 0, length);
             reader = new BinaryReader(stream);
             writer = new BinaryWriter(stream);
         }
+
         public GamePacketStream()
         {
             stream = new MemoryStream();
             reader = new BinaryReader(stream);
             writer = new BinaryWriter(stream);
         }
+
         public byte[] ToByteArray()
         {
             return stream.ToArray();
         }
+
         public float GetFloat()
         {
             return reader.ReadSingle();
         }
+
         public uint GetUInt32()
         {
             return reader.ReadUInt32();
@@ -103,66 +117,80 @@ public class TestTime : MonoBehaviour
         {
             return reader.ReadByte();
         }
+
         public void WriteFloat(float f)
         {
             writer.Write(f);
         }
+
         public void WriteUInt32(uint i)
         {
             writer.Write(i);
         }
+
         public void WriteByte(byte b)
         {
             writer.Write(b);
         }
+
         public float GetFloat(int offset)
         {
             stream.Seek(offset, SeekOrigin.Begin);
             return GetFloat();
         }
+
         public uint GetUInt32(int offset)
         {
             stream.Seek(offset, SeekOrigin.Begin);
             return GetUInt32();
         }
+
         public byte GetByte(int offset)
         {
             stream.Seek(offset, SeekOrigin.Begin);
             return GetByte();
         }
+
         public void WriteFloat(float f, int offset)
         {
             stream.Seek(offset, SeekOrigin.Begin);
             WriteFloat(f);
         }
+
         public void WriteUInt32(uint i, int offset)
         {
             stream.Seek(offset, SeekOrigin.Begin);
             WriteUInt32(i);
         }
+
         public void WriteByte(byte b, int offset)
         {
             stream.Seek(offset, SeekOrigin.Begin);
             WriteByte(b);
         }
+
         public int GetLenght()
         {
             return (int)stream.Length;
         }
     }
+
     private class GamePacketStringStream
     {
         private byte[] data;
         Encoding enc;
+
         public GamePacketStringStream(string s)
         {
             enc = Encoding.UTF8;
             data = enc.GetBytes(s);
         }
+
         public string Read()
         {
             return enc.GetString(data);
         }
+
         public void Write(string s)
         {
             enc.GetBytes(s, 0, enc.GetByteCount(s), data, 0);

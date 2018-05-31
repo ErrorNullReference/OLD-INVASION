@@ -9,7 +9,7 @@ public class FollowPlayer : MonoBehaviour
 
     void Start()
     {
-        Target = FindObjectOfType<SimpleController>().transform;    
+        Target = FindObjectOfType<PlayerController>().transform;    
     }
 
     // Update is called once per frame
