@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/TestScenes/EnemySpawnScenes/PathfindingTestSceneWithSpawner.unity
+- path: Assets/Scenes/TestScenes/Lobby.unity
   isLoaded: 1
   isActive: 1

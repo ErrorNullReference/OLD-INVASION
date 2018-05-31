@@ -6,11 +6,16 @@ using UnityEngine;
 public class PlayerAnimatorController : MonoBehaviour
 {
     public string speedZ, speedX;
+    public float RunTreshold;
+    public bool UseInputs;
     int speedZHash, speedXHash;
     Animator animator;
+    Vector3 dir, oldPos;
+    Camera camera;
 
     void Start()
     {
+        camera = Camera.main;
         animator = GetComponent<Animator>();
         speedZHash = Animator.StringToHash(speedZ);
         speedXHash = Animator.StringToHash(speedX);
@@ -19,31 +24,48 @@ public class PlayerAnimatorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        dir = Vector3.zero;
+            
+        if (UseInputs)
+            ExtrapolateDirectionWithInputs();
+        else
+            ExtrapolateDirectionWithoutInputs();
+        
+        animator.SetFloat(speedXHash, dir.x);
+        animator.SetFloat(speedZHash, dir.z);
+    }
+
+    void ExtrapolateDirectionWithInputs()
+    {
         float x = Input.GetAxis("Horizontal");
         float z = -Input.GetAxis("Vertical");
 
-       
-
-        Vector3 dir = Vector3.zero;
-
         if (x != 0 || z != 0)
         {
-            Vector3 cameraDir = Camera.main.transform.forward * x + Camera.main.transform.right * z;
+            Vector3 cameraDir = camera.transform.forward * x + camera.transform.right * z;
             cameraDir.y = 0;
             cameraDir = cameraDir.normalized;
 
             float ang = Mathf.Deg2Rad * Vector3.SignedAngle(cameraDir, transform.forward, Vector3.up);
             dir = new Vector3(Mathf.Cos(ang), 0, Mathf.Sin(ang));
+
+            if (Input.GetButton("Sprint"))
+                dir *= 2;
         }
+    }
 
-        //Vector3 dir = new Vector3((cameraDir.x + transform.forward.x) / 2f, 0, (cameraDir.z + transform.forward.z) / 2f);
-        //dir = new Vector3(x * dir.x, 0, z * dir.z);
+    void ExtrapolateDirectionWithoutInputs()
+    {
+        Vector3 playerDirection = transform.position - oldPos;
+        oldPos = transform.position;
 
-        //dir = transform.forward * cameraDir.x * 1 + transform.right * cameraDir.z * 1;
-        if (Input.GetButton("Sprint"))
-            dir *= 2;
+        if (playerDirection.x != 0 || playerDirection.z != 0)
+        {
+            float ang = Mathf.Deg2Rad * Vector3.SignedAngle(playerDirection.normalized, transform.forward, Vector3.up);
+            dir = new Vector3(Mathf.Cos(ang), 0, Mathf.Sin(ang));
 
-        animator.SetFloat(speedXHash, dir.x);
-        animator.SetFloat(speedZHash, dir.z);
+            if (playerDirection.magnitude >= RunTreshold)
+                dir *= 2;
+        }
     }
 }
